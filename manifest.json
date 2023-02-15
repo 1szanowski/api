@@ -1,0 +1,33 @@
+
+{
+  "manifest_version": 2,
+  "name": "parser",
+  "description": "A simple Chrome extension that uses the Google Sheets API with OAuth 2.0 authentication.",
+  "version": "1.0",
+
+  "permissions": ["storage","identity", "https://www.googleapis.com/auth/spreadsheets"],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [{
+    "matches": ["file:///*"],
+    "js"     : ["popup.js"]
+  }],
+  "browser_action": {
+
+    "default_popup": "popup.html"
+  },
+  "oauth2": {
+    "client_id": "1053586125918-q8pa2f2cthokmquffl5maomf0k4hisnr.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets.readonly",
+      "https://www.googleapis.com/auth/spreadsheets","https://www.googleapis.com/auth/drive",
+      "https://www.googleapis.com/auth/drive.readonly",
+      "https://www.googleapis.com/auth/drive.file"
+    ]
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://apis.google.com/; object-src 'self'"
+}

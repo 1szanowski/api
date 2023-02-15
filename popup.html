@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        body {
+            width: 100px;
+            height: 100px
+        }
+        button {
+            background-color:#577FC6;
+            color: #ffffff;
+            margin:0 auto;
+            border: 1px solid #000000;
+            display:block;
+            width:80px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display:block;
+        }
+        .dropdown-option {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .dropdown-option:hover {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<div class = "dropdown" id = "myDropdown">
+    <span>Options</span>
+    <div class="dropdown-content">Options here</div>
+
+
+</div>
+<div id = "dataDisplay">
+    <select class="form-control" id="item"></select>
+</div>
+<span><h1>Enter the MAtrix</h1> </span>
+<button id="clickMe">Click Me!</button>
+
+<script src="popup.js"></script>
+<script src="background.js" onauxclick="getToken()"></script>
+</body>
+</html>
+
+
